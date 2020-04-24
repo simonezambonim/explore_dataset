@@ -522,13 +522,6 @@ def main():
         eda_plot = EDA(df) 
 
         # Visualize data
-        #Kurtosis is one of the two measures that quantify shape of of a distribution. The another measure is skewness.
-        #Values in a leptokurtic distribution are near the mean or at the extremes.
-        #A flat distribution where the values are moderately spread out (i.e., unlike leptokurtic) is called platykurtic distribution.
-        # A distribution whose shape is in between a leptokurtic distribution and a platykurtic distribution is called a mesokurtic distribution. 
-        # A mesokurtic distribution looks more close to a normal distribution.
-        # Kurtosis = 0 Normal Distribution
-        #Kurtosid = 1 
 
         if (menu =="Univariate analysis" ):
             st.header("Univariate analysis")
@@ -570,25 +563,10 @@ def main():
 
             plot_multivariate(eda_plot, radio_plot)
 
-            # st.markdown(
-            #      'You can create univariate, bivariate and multivariate data analysis \n \
-            #         - univariate: provides summary statistics of only one variable in the raw dataset. \
-            #         Examples: Box plot, Violin plot, Swarmplot, Histogram, Distribution plot. \n  \
-            #         - bivariate - finds relationship between variables in the dataset and/or the target variable. \
-            #         Examples: Box plot (with x var or Hue), Violin plot (with x var or Hue), Swarmplot (with x var or Hue), \
-            #         Histogram (with hue), Scatterplot, CountPlot.  \
-            #         - multivariate - helps to understand interactions among different variables in the dataset. \
-            #         Examples: Box plot (with x var and Hue),  Violin plot (with x var and Hue), Swarmplot (with x var and Hue), \
-            #         Pairplot, HeatMap, Scatterplot(with Hue and size)')
- 
-
-    # except:
-
-    #     st.error('Error: Load a .csv file!')
 
         st.sidebar.title('About')
         st.sidebar.info('This app is a preprocessing data available in [] \n \
-        It is mantained by [Simone](https://www.linkedin.com/in/simonezambonim/). Check this code at HTTPS GITHUB')
+        It is mantained by [Simone](https://www.linkedin.com/in/simonezambonim/). Check this code at https://github.com/simonezambonim/explore_dataset')
 
 
 if __name__ == '__main__':
