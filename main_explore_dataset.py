@@ -1,4 +1,4 @@
-'''Help create a preprocessing file'''
+'''Help to create a data explorer file'''
 from eda import *
 import pandas as pd
 import streamlit as st
@@ -566,7 +566,7 @@ def main():
 
         st.sidebar.title('About')
         st.sidebar.info('This app is a data explorer tool available on [ExploreDataset](https://exploredataset.herokuapp.com/) \n \
-        It is mantained by [Simone](https://www.linkedin.com/in/simonezambonim/). Check this code at https://github.com/simonezambonim/explore_dataset')
+        It is mantained by [Simone](https://www.linkedin.com/in/simonezambonim/). Check this code on [Github] (https://github.com/simonezambonim/explore_dataset')
 
 
 if __name__ == '__main__':
