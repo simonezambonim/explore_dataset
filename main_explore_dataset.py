@@ -357,7 +357,7 @@ def plot_multivariate(obj_plot, radio_plot):
 
 def main():
 
-    st.title('Preprocessing data :wrench:')
+    st.title('Explore your data :wrench:')
     st.header('Upload your file')  
 
     file  = st.file_uploader('Upload your file (.csv)', type = 'csv')
