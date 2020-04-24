@@ -44,7 +44,7 @@ You can access the app *[here](https://exploredataset.herokuapp.com/)
 
 * [Streamlit](https://docs.streamlit.io/api.html) - The web framework 
 * [Plotly express](https://plotly.com/python/plotly-express/) - Interactive plots
-* [Heroku] (https://www.heroku.com/) - App host
+* [Heroku](https://www.heroku.com/) - App host
 
 
 ## Author
