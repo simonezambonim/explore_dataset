@@ -1,9 +1,9 @@
 # Data exploring with Streamlit 
 
-This app aims to help data scientists get their first insights of a dataset in a simple and fast way.
-Data exploratory analysis is one of the most important steps in a data science project and it can be very time consuming.
-However many times this work can be facilitaded using a generalizided code for EDA. By using streamlit and doing it in a simple way, it is possible to 
-extract relevant variables from a dataset with hundreds of variables, treat missing values and perform univariate and multivariate analysis.  
+This app aims to help data scientists get their dataset first insights in a simple and fast way.
+**Exploratory Data Analysis** is one of the most important steps in a data science project and it can be very time-consuming.
+However, many times this work can be facilitated using a generalized code for EDA. 
+This app helps to extract relevant variables from a dataset with hundreds of variables, treat/drop missing values, and also perform univariate and multivariate analysis through beautiful charts.    
 
 ## Getting Started
 
@@ -13,59 +13,45 @@ These instructions will get you a copy of the project up and running on your loc
 
 The packages needed are in the requirements.txt file.
 
-```
-Give examples
-```
-
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Clone the repository and install all the packages necessary:
 
 ```
-until finished
+cd path
+vintualenv venv
+cd path\venv\Scripts\activate
+
+pip install -r requirements.txt 
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Use the following command to run the application:
 
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+streamlit run main_explore_dataset.py
 ```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+You can create your own app on Heroku platform! It is easy and free!
+Create your account and download the Heroku CLI.
+Follow this *[tutorial](https://dev.to/hannahyan/getting-started-in-deploying-interactive-data-science-apps-with-streamlit-part-2-3ob).
+
+You can access the app *[here](https://exploredataset.herokuapp.com/)
 
 ## Built With
 
-* [Streamlit](https://docs.streamlit.io/api.html) - The web framework used
+* [Streamlit](https://docs.streamlit.io/api.html) - The web framework 
 * [Plotly express](https://plotly.com/python/plotly-express/) - Interactive plots
+* [Heroku] (https://www.heroku.com/) - App host
 
 
 ## Author
 
-* **Simone Rosana Zambonim** - *Initial work* - [Linkedin](https://www.linkedin.com/in/simonezambonim/) 
+* **Simone Rosana Zambonim**  - [Linkedin](https://www.linkedin.com/in/simonezambonim/) [Github](https://github.com/simonezambonim/)
 
+
+## Acknowledgments
+
+Using Streamlit you can create beautiful apps and it can also help data scientists translate your work to a business language.
