@@ -7,7 +7,7 @@ This app helps to extract relevant variables from a dataset with hundreds of var
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Here are some information to help you get started. This app is still in development and mony more functionalities can be added to it!
 
 ### Prerequisites
 
