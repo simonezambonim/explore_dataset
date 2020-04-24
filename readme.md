@@ -7,7 +7,7 @@ This app helps to extract relevant variables from a dataset with hundreds of var
 
 ## Getting Started
 
-Here are some information to help you get started. This app is still in development and mony more functionalities can be added to it!
+Here are some information to help you get started. This app is still in development and many more functionalities can be added to it!
 
 ### Prerequisites
 
@@ -36,9 +36,9 @@ streamlit run main_explore_dataset.py
 
 You can create your own app on Heroku platform! It is easy and free!
 Create your account and download the Heroku CLI.
-Follow this *[tutorial](https://dev.to/hannahyan/getting-started-in-deploying-interactive-data-science-apps-with-streamlit-part-2-3ob).
+Follow this [tutorial](https://dev.to/hannahyan/getting-started-in-deploying-interactive-data-science-apps-with-streamlit-part-2-3ob).
 
-You can access the app *[here](https://exploredataset.herokuapp.com/)
+You can access the app [here](https://exploredataset.herokuapp.com/)
 
 ## Built With
 
