@@ -565,7 +565,7 @@ def main():
 
 
         st.sidebar.title('About')
-        st.sidebar.info('This app is a preprocessing data available in [] \n \
+        st.sidebar.info('This app is a data explorer tool available on [ExploreDataset](https://exploredataset.herokuapp.com/) \n \
         It is mantained by [Simone](https://www.linkedin.com/in/simonezambonim/). Check this code at https://github.com/simonezambonim/explore_dataset')
 
 
