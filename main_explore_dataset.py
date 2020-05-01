@@ -475,7 +475,6 @@ def main():
                         st.markdown(get_table_download_link(selected_sp_data), unsafe_allow_html=True)
                     st.warning("Remember: If you want to save these changes, download the file and upload it again.")
 
-        
 
         # Treat missing values"
         if (menu =="Treat or drop missing values"):
@@ -604,7 +603,7 @@ def main():
 
         st.sidebar.title('About')
         st.sidebar.info('This app is a data explorer tool available on [ExploreDataset](https://exploredataset.herokuapp.com/) \n \
-        It is mantained by [Simone](https://www.linkedin.com/in/simonezambonim/). Check this code on [Github] (https://github.com/simonezambonim/explore_dataset')
+        It is mantained by [Simone](https://www.linkedin.com/in/simonezambonim/). Check this code on [Github](https://github.com/simonezambonim/explore_dataset')
 
 
 if __name__ == '__main__':
