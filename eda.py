@@ -4,8 +4,7 @@ import plotly.express as px
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-sns.set()
-
+sns.set(style="darkgrid")
 px.defaults.width = 800
 px.defaults.height = 500
 
@@ -22,12 +21,12 @@ class EDA:
         return px.box(self.df, x=col_x, y=main_var, color=hue)
 
     def violin(self, main_var, col_x=None, hue=None, split=False):
-        sns.set(style="darkgrid")
+        
         return sns.violinplot(x=col_x, y=main_var, hue=hue,
                     data=self.df, palette="husl", split=split)
 
     def swarmplot(self, main_var, col_x=None, hue=None, split=False):
-        sns.set(style="darkgrid")
+        
         return sns.swarmplot(x=col_x, y=main_var, hue=hue,
                     data=self.df, palette="husl", dodge=split)
     
@@ -52,19 +51,19 @@ class EDA:
         return px.line(data, x=col_x, y=col_y,color=hue)
     
     def CountPlot(self, main_var, hue=None):
-        sns.set(style="darkgrid")
+        
         sns.set(font_scale=0.6)
-        chart = sns.countplot(x=main_var, data=self.df, hue=hue, palette='pastel')
+        chart = sns.countplot(y=main_var, data=self.df, hue=hue, palette='pastel')
         return chart.set_xticklabels(chart.get_xticklabels(), rotation=30)
 
     def heatmap_vars(self,cols, func = np.mean):
-        sns.set(style="darkgrid")
+        
         sns.set(font_scale=0.6)
         chart = sns.heatmap(self.df.pivot_table(index =cols[0], columns =cols[1],  values =cols[2], aggfunc=func, fill_value=0).dropna(axis=1), annot=True, annot_kws={"size": 7}, linewidths=.5)
         return chart.set_xticklabels(chart.get_xticklabels(), rotation=30)
 
     def Corr(self, cols=None, method = 'pearson'):
-        sns.set(style="darkgrid")
+        
         sns.set(font_scale=0.6)
         if len(cols) != 0:
             corr = self.df[cols].corr(method = method)
@@ -76,7 +75,7 @@ class EDA:
         return chart
    
     def DistPlot(self, main_var):
-        sns.set(style="darkgrid")
+        
         return sns.distplot(self.df[main_var], color='c', rug=True)
 
     def PairPlot(self, cols, hue=None):
@@ -85,6 +84,6 @@ class EDA:
                 cols = (self.num_vars).remove(hue)
             except:
                 cols = self.num_vars
-        sns.set(style="darkgrid")
+        
         return sns.pairplot(self.df, hue=hue, vars = cols, palette="husl", corner=True, diag_kind="kde")
 

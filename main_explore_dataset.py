@@ -6,9 +6,10 @@ import base64
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-# import unidecodedata
-sns.set()
+from sklearn.preprocessing import LabelEncoder
 
+# import unidecodedata
+sns.set(style="darkgrid")
 
 
 def get_data(file):
@@ -386,7 +387,7 @@ def main():
             st.dataframe(df.head(ndisplay).style.highlight_null(null_color='#d5d9e2'))
 
         #Sidebar Menu
-        options = ["View statistics","Visualize partial data", "Treat or drop missing values",\
+        options = ["View statistics","Visualize partial data", "Encode categorical", "Treat or drop missing values",\
             "Univariate analysis", "Multivariate analysis"]
         menu = st.sidebar.selectbox("Menu options", options)
 
@@ -438,6 +439,43 @@ def main():
                     with st.spinner('Working on it...'):
                         st.markdown(get_table_download_link(selected_sp_data), unsafe_allow_html=True)
                     st.warning("Remember: If you want to save these changes, download the file and upload it again.")
+
+        # Encode categorical vars
+
+        if (menu =="Encode categorical"):
+            st.header('Encode categorical variables')
+
+            var_encode = st.multiselect("Select variable to encode", (df_info[df_info.unique<25].index))
+
+            if var_encode != None:
+                le = LabelEncoder()
+                #ohe =  OneHotEncoder(handle_unknown='ignore')
+                        
+                method_encode = st.sidebar.radio("Method", ('None','Label encoding', "One hot encoding"))
+                
+                try:
+                    if method_encode == 'Label encoding':
+                        df[var_encode] = df[var_encode].apply(le.fit_transform)
+        
+                    elif method_encode == "One hot encoding":
+                        if len(var_encode) == 1:
+                            var_encode = list(var_encode)
+                        drop_ = st.sidebar.checkbox("Drop First")
+                        df = pd.get_dummies(df,prefix=var_encode, columns = var_encode, drop_first=drop_, dtype=int)
+                        
+                    st.dataframe(df.head())
+                except:
+                     st.warning("NAN error: Treat missing values first!")
+                        
+                # Download encoded data
+                download_data = st.sidebar.checkbox("Download encodeded data!")
+                if download_data:
+                    st.markdown('**Download new file below** :open_file_folder:')
+                    with st.spinner('Working on it...'):
+                        st.markdown(get_table_download_link(selected_sp_data), unsafe_allow_html=True)
+                    st.warning("Remember: If you want to save these changes, download the file and upload it again.")
+
+        
 
         # Treat missing values"
         if (menu =="Treat or drop missing values"):
