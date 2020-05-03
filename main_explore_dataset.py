@@ -2,18 +2,22 @@
 from eda import *
 import pandas as pd
 import streamlit as st
+import unicodedata
 import base64
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import LabelEncoder
 
+
 # import unidecodedata
 sns.set(style="darkgrid")
 
-
 def get_data(file):
     
+    """
+    Read data from csv and parse data
+    """
     read_cache_csv = st.cache(pd.read_csv, allow_output_mutation=True)
     df = read_cache_csv(file)
 
@@ -48,13 +52,36 @@ def get_data(file):
                 st.error("Choose another column for the date time format")
                 df = read_cache_csv(file, encoding=encode, sep = delimiter, decimal =decimal)
             
-    format_header =(lambda x: str(x).strip().lower().replace(' ', '_').replace('(', '').replace(')', ''))
+    format_header =(lambda x: str(x).strip_accents().strip().lower().replace(' ', '_').replace('(', '').replace(')', '').replace('/', ''))
     df.rename(format_header, axis='columns', inplace = True)
 
     return df
 
+def strip_accents(text):
+    """
+    Strip accents from input String.
+
+    :param text: The input string.
+    :type text: String.
+
+    :returns: The processed String.
+    :rtype: String.
+    """
+    try:
+        text = unicode(text, 'utf-8')
+    except (TypeError, NameError): # unicode is a default on python 3 
+        pass
+    text = unicodedata.normalize('NFD', text)
+    text = text.encode('ascii', 'ignore')
+    text = text.decode("utf-8")
+    return str(text)
+
 @st.cache
 def get_stats(df):
+
+    """
+    Get df.describe() method for object or numerical features 
+    """
     stats_num = df.describe()
 
     if df.select_dtypes(np.object).empty :
@@ -205,11 +232,6 @@ def get_table_download_link(df):
     href = f'<a href="data:file/csv;base64,{b64}">Download csv file</a>'
     return href
 
-    # def remove_accents_strip_lower(x):
-    #     nfkd = unicodedata.normalize('NFKD', x)
-    #     words = u"".join([c for c in nfkd if not unicodedata.combining(c)])
-
-    #     return words.strip().lower().replace(' ', '_').replace('(', '').replace(')', '')
 
 def plot_univariate(obj_plot, main_var, radio_plot_uni):
     
