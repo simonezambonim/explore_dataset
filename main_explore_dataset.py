@@ -52,7 +52,7 @@ def get_data(file):
                 st.error("Choose another column for the date time format")
                 df = read_cache_csv(file, encoding=encode, sep = delimiter, decimal =decimal)
             
-    format_header =(lambda x: str(x).strip_accents().strip().lower().replace(' ', '_').replace('(', '').replace(')', '').replace('/', ''))
+    format_header =(lambda x: strip_accents(str(x)).strip().lower().replace(' ', '_').replace('(', '').replace(')', '').replace('/', ''))
     df.rename(format_header, axis='columns', inplace = True)
 
     return df
