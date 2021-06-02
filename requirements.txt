@@ -82,7 +82,7 @@ traitlets==4.3.3
 tzlocal==2.0.0
 unicodedata2==13.0.0.post2
 Unidecode==1.1.1
-urllib3==1.25.9
+urllib3==1.26.5
 validators==0.14.3
 watchdog==0.10.2
 wcwidth==0.1.9
